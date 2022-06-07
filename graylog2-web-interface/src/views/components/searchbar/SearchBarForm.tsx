@@ -70,7 +70,7 @@ const SearchBarForm = ({ initialValues, limitDuration, onSubmit, children, valid
 
   return (
     <Formik<SearchBarFormValues> initialValues={_initialValues}
-                                 enableReinitialize={enableReinitialize}
+                                 enableReinitialize={false}
                                  onSubmit={_onSubmit}
                                  innerRef={formRef}
                                  validate={_validate}

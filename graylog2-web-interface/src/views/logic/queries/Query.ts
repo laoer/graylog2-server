@@ -31,6 +31,7 @@ export type SearchFilter = {
   title?: string,
   description?: string
   queryString: string
+  disabled?: boolean,
 }
 
 export type FiltersType = Immutable.List<SearchFilter>

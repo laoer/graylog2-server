@@ -210,7 +210,7 @@ const SearchBar = ({
                       <BottomRow>
                         <SearchButtonAndQuery>
                           <SearchButton disabled={disableSearchSubmit}
-                                        dirty={dirty}
+                                        dirty={false}
                                         displaySpinner={isSubmitting} />
 
                           <Field name="queryString">
