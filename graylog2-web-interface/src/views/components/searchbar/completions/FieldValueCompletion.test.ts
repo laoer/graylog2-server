@@ -68,6 +68,8 @@ describe('FieldValueCompletion', () => {
 
   const createKeywordToken = (value: string) => createCurrentToken('keyword', value, 0, 0);
 
+  const userTimezone = 'Europe/Berlin';
+
   beforeEach(() => {
     jest.clearAllMocks();
     asMock(fetch).mockResolvedValue(suggestionsResponse);
@@ -86,6 +88,7 @@ describe('FieldValueCompletion', () => {
         timeRange: undefined,
         streams: undefined,
         fieldTypes,
+        userTimezone,
       })).toEqual([]);
     });
 
@@ -102,6 +105,7 @@ describe('FieldValueCompletion', () => {
         timeRange: undefined,
         streams: undefined,
         fieldTypes,
+        userTimezone,
       });
 
       expect(suggestions).toEqual(expectedSuggestions);
@@ -124,6 +128,7 @@ describe('FieldValueCompletion', () => {
         timeRange: undefined,
         streams: undefined,
         fieldTypes,
+        userTimezone,
       });
 
       expect(suggestions).toEqual(expectedSuggestions);
@@ -146,6 +151,7 @@ describe('FieldValueCompletion', () => {
           all: { http_method: httpMethodField },
           query: {},
         },
+        userTimezone,
       });
 
       expect(suggestions).toEqual(expectedSuggestions);
@@ -164,6 +170,7 @@ describe('FieldValueCompletion', () => {
         timeRange: undefined,
         streams: undefined,
         fieldTypes,
+        userTimezone,
       });
 
       expect(suggestions).toEqual([]);
@@ -182,6 +189,7 @@ describe('FieldValueCompletion', () => {
         timeRange: undefined,
         streams: undefined,
         fieldTypes: { all: {}, query: {} },
+        userTimezone,
       });
 
       expect(suggestions).toEqual([]);
@@ -201,6 +209,7 @@ describe('FieldValueCompletion', () => {
         timeRange: undefined,
         streams: undefined,
         fieldTypes: { all: { message: messageField }, query: { message: messageField } },
+        userTimezone,
       });
 
       expect(suggestions).toEqual([]);
@@ -233,6 +242,7 @@ describe('FieldValueCompletion', () => {
         timeRange: undefined,
         streams: undefined,
         fieldTypes,
+        userTimezone,
       });
 
       const expectedCorrections = [
@@ -269,6 +279,7 @@ describe('FieldValueCompletion', () => {
         timeRange: undefined,
         streams: undefined,
         fieldTypes,
+        userTimezone,
       });
 
       expect(suggestions).toEqual([
@@ -318,6 +329,7 @@ describe('FieldValueCompletion', () => {
           timeRange: undefined,
           streams: undefined,
           fieldTypes,
+          userTimezone,
         });
 
         expect(firstSuggestions).toEqual(expectedFirstSuggestions);
@@ -342,6 +354,7 @@ describe('FieldValueCompletion', () => {
           timeRange: undefined,
           streams: undefined,
           fieldTypes,
+          userTimezone,
         });
 
         expect(secondSuggestions).toEqual([
@@ -364,6 +377,7 @@ describe('FieldValueCompletion', () => {
           timeRange: undefined,
           streams: undefined,
           fieldTypes,
+          userTimezone,
         });
 
         expect(firstSuggestions).toEqual(expectedFirstSuggestions);
@@ -377,6 +391,7 @@ describe('FieldValueCompletion', () => {
           timeRange: undefined,
           streams: undefined,
           fieldTypes,
+          userTimezone,
         });
 
         expect(secondSuggestions).toEqual(expectedFirstSuggestions);

@@ -142,6 +142,7 @@ class FieldValueCompletion implements Completer {
     timeRange,
     streams,
     fieldTypes,
+    userTimezone,
   }: CompleterContext) => {
     const { fieldName, input } = getFieldNameAndInput(currentToken, lastToken);
 
@@ -157,7 +158,7 @@ class FieldValueCompletion implements Completer {
       }
     }
 
-    const normalizedTimeRange = (!timeRange || isNoTimeRangeOverride(timeRange)) ? undefined : onSubmittingTimerange(timeRange);
+    const normalizedTimeRange = (!timeRange || isNoTimeRangeOverride(timeRange)) ? undefined : onSubmittingTimerange(timeRange, userTimezone);
 
     return fetch('POST', suggestionsUrl, {
       field: fieldName,
