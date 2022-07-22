@@ -140,19 +140,19 @@ const Navigation = React.memo(({ pathname }: Props) => {
       <Navbar.Collapse>
         <Nav navbar>
           <LinkContainer to={Routes.SEARCH}>
-            <NavItem to="search">Search</NavItem>
+            <NavItem to="search">搜索</NavItem>
           </LinkContainer>
 
           <LinkContainer to={Routes.STREAMS}>
-            <NavItem>Streams</NavItem>
+            <NavItem>流</NavItem>
           </LinkContainer>
 
           <LinkContainer to={Routes.ALERTS.LIST}>
-            <NavItem>Alerts</NavItem>
+            <NavItem>告警</NavItem>
           </LinkContainer>
 
           <LinkContainer to={Routes.DASHBOARDS}>
-            <NavItem>Dashboards</NavItem>
+            <NavItem>看板</NavItem>
           </LinkContainer>
 
           {pluginNavigations}
