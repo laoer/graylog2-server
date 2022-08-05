@@ -92,7 +92,7 @@ const TimeRangeDropdownButton = ({
                                  displayTitle={false}
                                  onChange={selectRelativeTimeRangePreset}
                                  onToggle={_onPresetSelectToggle}
-                                 header="From (Until Now)"
+                                 header="从... (至现在)"
                                  bsSize={null} />
     )
     : null;

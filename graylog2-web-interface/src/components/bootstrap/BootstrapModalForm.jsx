@@ -54,8 +54,8 @@ class BootstrapModalForm extends React.Component {
   static defaultProps = {
     backdrop: undefined,
     formProps: {},
-    cancelButtonText: 'Cancel',
-    submitButtonText: 'Submit',
+    cancelButtonText: '取消',
+    submitButtonText: '确定',
     submitButtonDisabled: false,
     onModalOpen: () => {},
     onModalClose: () => {},

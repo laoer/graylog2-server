@@ -117,7 +117,7 @@ const TimeRangeLivePreview = ({ timerange }: Props) => {
   return (
     <PreviewWrapper data-testid="time-range-live-preview">
       <FromWrapper>
-        <Title>From</Title>
+        <Title>开始</Title>
         <Date title={`Dates Formatted as [${DateTime.Formats.TIMESTAMP}]`}>{from}</Date>
       </FromWrapper>
 
@@ -126,7 +126,7 @@ const TimeRangeLivePreview = ({ timerange }: Props) => {
       </MiddleIcon>
 
       <UntilWrapper>
-        <Title>Until</Title>
+        <Title>结束</Title>
         <Date title={`Dates Formatted as [${DateTime.Formats.TIMESTAMP}]`}>{until}</Date>
       </UntilWrapper>
     </PreviewWrapper>

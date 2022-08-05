@@ -68,7 +68,8 @@ ErrorWidget.propTypes = {
 };
 
 ErrorWidget.defaultProps = {
-  title: 'While retrieving data for this widget, the following error(s) occurred:',
+  //title: 'While retrieving data for this widget, the following error(s) occurred:',
+  title: '检索数据, 出现错误:',
 };
 
 export default ErrorWidget;

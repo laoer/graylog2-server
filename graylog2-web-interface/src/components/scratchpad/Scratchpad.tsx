@@ -30,9 +30,12 @@ import Store from 'logic/local-storage/Store';
 
 const DEFAULT_SCRATCHDATA = '';
 const TEXTAREA_ID = 'scratchpad-text-content';
-const STATUS_CLEARED = 'Cleared.';
-const STATUS_COPIED = 'Copied!';
-const STATUS_AUTOSAVED = 'Auto saved.';
+// const STATUS_CLEARED = 'Cleared.';
+// const STATUS_COPIED = 'Copied!';
+// const STATUS_AUTOSAVED = 'Auto saved.';
+const STATUS_CLEARED = '已清除.';
+const STATUS_COPIED = '已复制!';
+const STATUS_AUTOSAVED = '自动保存成功.';
 const STATUS_DEFAULT = '';
 
 const ContentArea = styled.div`
@@ -188,7 +191,7 @@ const Scratchpad = () => {
   if (!isScratchpadVisible) return null;
 
   return (
-    <InteractableModal title="Scratchpad"
+    <InteractableModal title="便笺"
                        onClose={() => setScratchpadVisibility(false)}
                        onDrag={handleDrag}
                        onResize={handleSize}
@@ -198,10 +201,9 @@ const Scratchpad = () => {
         {!isSecurityWarningConfirmed && (
           <StyledAlert bsStyle="warning" bsSize="sm">
             <Icon name="exclamation-triangle" size="lg" />
-            <AlertNote>We recommend you do <strong>not</strong> store any sensitive information, such as passwords, in
-              this area.
+            <AlertNote><strong>请勿</strong>在此存储任何敏感信息，例如手机号码、密码等。
             </AlertNote>
-            <Button bsStyle="link" bsSize="sm" onClick={handleGotIt}>Got It!</Button>
+            <Button bsStyle="link" bsSize="sm" onClick={handleGotIt}>已了解!</Button>
           </StyledAlert>
         )}
 
@@ -216,9 +218,7 @@ const Scratchpad = () => {
                           trigger={['hover', 'focus']}
                           overlay={(
                             <Tooltip id="scratchpad-help" show>
-                              You can use this space to store personal notes and other information while interacting with
-                              Graylog, without leaving your browser window. For example, store timestamps, user IDs, or IP
-                              addresses you need in various investigations.
+                              您可以使用此空间来存储个人笔记和其他信息，且无需离开浏览器窗口。
                             </Tooltip>
                           )}>
             <Button bsStyle="link">
@@ -247,10 +247,10 @@ const Scratchpad = () => {
       </ContentArea>
 
       <BootstrapModalConfirm ref={confirmationModalRef}
-                             title="Are you sure?"
+                             title="确定?"
                              onConfirm={handleClearText}
                              onCancel={handleCancelClear}>
-        This will clear out your Scratchpad content, do you wish to proceed?
+        确定清除便笺内容内容?
       </BootstrapModalConfirm>
     </InteractableModal>
   );

@@ -60,13 +60,13 @@ class RefreshControls extends React.Component<Props> {
   };
 
   static INTERVAL_OPTIONS: Array<[string, number]> = [
-    ['1 Second', 1000],
-    ['2 Seconds', 2000],
-    ['5 Seconds', 5000],
-    ['10 Seconds', 10000],
-    ['30 Seconds', 30000],
-    ['1 Minute', 60000],
-    ['5 Minutes', 300000],
+    ['1 秒', 1000],
+    ['2 秒', 2000],
+    ['5 秒', 5000],
+    ['10 秒', 10000],
+    ['30 秒', 30000],
+    ['1 分钟', 60000],
+    ['5 分钟', 300000],
   ];
 
   componentWillUnmount(): void {
@@ -88,7 +88,7 @@ class RefreshControls extends React.Component<Props> {
   };
 
   _buttonLabel = (refreshConfigEnabled, naturalInterval) => {
-    let buttonText: React.ReactNode = 'Not updating';
+    let buttonText: React.ReactNode = '未在更新';
 
     if (refreshConfigEnabled) {
       buttonText = <>Every {naturalInterval}</>;

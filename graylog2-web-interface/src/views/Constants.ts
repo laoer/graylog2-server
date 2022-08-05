@@ -49,15 +49,24 @@ export const DEFAULT_CUSTOM_HIGHLIGHT_RANGE = chroma.scale(['lightyellow', 'ligh
   .colors(40);
 
 export const TimeUnits = {
+  /*
   seconds: 'Seconds',
   minutes: 'Minutes',
   hours: 'Hours',
   days: 'Days',
   weeks: 'Weeks',
   months: 'Months',
+  */
+  seconds: '秒',
+  minutes: '分钟',
+  hours: '小时',
+  days: '天',
+  weeks: '周',
+  months: '月',
 };
 
 export const RELATIVE_RANGE_TYPES = [
+  /*
   {
     type: 'seconds',
     label: 'Seconds',
@@ -70,6 +79,20 @@ export const RELATIVE_RANGE_TYPES = [
   }, {
     type: 'days',
     label: 'Days',
+  },
+  */
+  {
+    type: 'seconds',
+    label: '秒',
+  }, {
+    type: 'minutes',
+    label: '分钟',
+  }, {
+    type: 'hours',
+    label: '小时',
+  }, {
+    type: 'days',
+    label: '天',
   },
 ] as const;
 
@@ -90,7 +113,7 @@ export const showDashboardsPath = `${dashboardsPath}/:viewId`;
 export const extendedSearchPath = '/extendedsearch';
 
 export const availableTimeRangeTypes = [
-  { type: 'relative' as const, name: 'Relative' },
-  { type: 'absolute' as const, name: 'Absolute' },
-  { type: 'keyword' as const, name: 'Keyword' },
+  { type: 'relative' as const, name: '相对期间' },
+  { type: 'absolute' as const, name: '确定日期' },
+  { type: 'keyword' as const, name: '关键字' },
 ];

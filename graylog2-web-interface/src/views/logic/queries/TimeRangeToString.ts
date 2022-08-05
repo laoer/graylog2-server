@@ -32,19 +32,19 @@ export const readableRange = (timerange: TimeRange, fieldName: 'range' | 'from' 
   const dateAgo = moment().subtract(rangeAsSeconds, 'seconds');
   const rangeTimespan = moment.preciseDiff(moment(), dateAgo);
 
-  return `${rangeTimespan} ago`;
+  return `${rangeTimespan} 之前`;
 };
 
 const relativeTimeRangeToString = (timerange: RelativeTimeRange): string => {
   if (isTypeRelativeWithStartOnly(timerange)) {
     if (timerange.range === 0) {
-      return 'All Time';
+      return '所有时间';
     }
 
-    return `${readableRange(timerange, 'range')} - Now`;
+    return `${readableRange(timerange, 'range')} - 现在`;
   }
 
-  return `${readableRange(timerange, 'from')} - ${readableRange(timerange, 'to', 'Now')}`;
+  return `${readableRange(timerange, 'from')} - ${readableRange(timerange, 'to', '现在')}`;
 };
 
 const absoluteTimeRangeToString = (timerange: AbsoluteTimeRange, localizer = (str) => str): string => {

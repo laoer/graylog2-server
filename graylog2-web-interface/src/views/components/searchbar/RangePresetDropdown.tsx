@@ -45,7 +45,7 @@ const RangePresetDropdown = ({ disabled, onChange, onToggle, className, displayT
   const { config } = useSearchConfiguration();
   const availableOptions = config?.relative_timerange_options;
   const timeRangeLimit = moment.duration(config?.query_time_range_limit);
-  const title = displayTitle && (availableOptions ? 'Preset Times' : 'Loading Ranges...');
+  const title = displayTitle && (availableOptions ? '预设时间' : '加载中...');
   let options;
 
   if (availableOptions) {
@@ -75,7 +75,7 @@ const RangePresetDropdown = ({ disabled, onChange, onToggle, className, displayT
       options.push(all);
     }
   } else {
-    options = (<MenuItem eventKey="300" disabled>Loading...</MenuItem>);
+    options = (<MenuItem eventKey="300" disabled>加载中...</MenuItem>);
   }
 
   const _onChange = (range) => {
@@ -98,7 +98,7 @@ const RangePresetDropdown = ({ disabled, onChange, onToggle, className, displayT
       {options}
       <IfPermitted permissions="clusterconfigentry:edit">
         <MenuItem divider />
-        <AdminMenuItem href="/system/configurations" target="_blank">Configure Ranges <ExternalIcon name="external-link-alt" /></AdminMenuItem>
+        <AdminMenuItem href="/system/configurations" target="_blank">配置时间区间 <ExternalIcon name="external-link-alt" /></AdminMenuItem>
       </IfPermitted>
     </DropdownButton>
   );

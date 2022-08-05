@@ -71,7 +71,7 @@ const dateOutput = (timerange: TimeRange) => {
         from = readableRange(timerange, 'from');
       }
 
-      to = readableRange(timerange, 'to', 'Now');
+      to = readableRange(timerange, 'to', '现在');
 
       return {
         from,
@@ -113,11 +113,11 @@ const TimeRangeDisplay = ({ timerange, toggleDropdownShow }: Props) => {
   return (
     <TimeRangeWrapper aria-label="Search Time Range, Opens Time Range Selector On Click" role="button" onClick={toggleDropdownShow}>
       {!(timerange && 'type' in timerange)
-        ? <span><code>No Override</code></span>
+        ? <span><code>未选择</code></span>
         : (
           <>
-            <span data-testid="from"><strong>From</strong>: <code>{from}</code></span>
-            <span data-testid="to"><strong>Until</strong>: <code>{until}</code></span>
+            <span data-testid="from"><strong>开始</strong>: <code>{from}</code></span>
+            <span data-testid="to"><strong>结束</strong>: <code>{until}</code></span>
           </>
         )}
     </TimeRangeWrapper>

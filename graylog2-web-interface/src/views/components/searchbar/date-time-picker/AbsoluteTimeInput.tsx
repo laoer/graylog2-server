@@ -239,7 +239,7 @@ const AbsoluteTimeInput = ({ dateTime, range, onChange }) => {
             <StyledButton bsStyle="link"
                           bsSize="small"
                           onClick={_onClickHourToggle}
-                          title="Toggle between beginning and end of day">
+                          title="切换一天的开始和结束时间">
               <Icon name={hourIcon.current} />
             </StyledButton>
           </StyledInputAddon>
@@ -270,7 +270,7 @@ const AbsoluteTimeInput = ({ dateTime, range, onChange }) => {
             <StyledButton bsStyle="link"
                           bsSize="small"
                           onClick={_onClickTimeNow}
-                          title="Set to current local time">
+                          title="设置当前时间">
               <Icon name="magic" />
             </StyledButton>
           </StyledInputAddon>

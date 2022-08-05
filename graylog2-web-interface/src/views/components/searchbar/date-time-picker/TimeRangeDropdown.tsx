@@ -212,7 +212,7 @@ const TimeRangeDropdown = ({
 
   const title = (
     <PopoverTitle>
-      <span>Search Time Range</span>
+      <span>选择时间范围</span>
       {limitDuration > 0 && (
         <LimitLabel>
           <Icon name="exclamation-triangle" />
@@ -273,15 +273,15 @@ const TimeRangeDropdown = ({
 
                 <Row className="row-sm">
                   <Col md={6}>
-                    <Timezone>All timezones using: <b>{userTimezone}</b></Timezone>
+                    <Timezone>默认时区: <b>{userTimezone}</b></Timezone>
                   </Col>
                   <Col md={6}>
                     <div className="pull-right">
                       {noOverride && (
                         <Button bsStyle="link" onClick={handleNoOverride}>No Override</Button>
                       )}
-                      <CancelButton bsStyle="default" onClick={handleCancel}>Cancel</CancelButton>
-                      <Button bsStyle="success" disabled={!isValid || validatingKeyword} type="submit">Apply</Button>
+                      <CancelButton bsStyle="default" onClick={handleCancel}>取消</CancelButton>
+                      <Button bsStyle="success" disabled={!isValid || validatingKeyword} type="submit">确定</Button>
                     </div>
                   </Col>
                 </Row>

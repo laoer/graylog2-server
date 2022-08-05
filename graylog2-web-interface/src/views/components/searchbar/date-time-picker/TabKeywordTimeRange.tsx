@@ -132,7 +132,7 @@ const TabKeywordTimeRange = ({ defaultValue, disabled, setValidatingKeyword }: P
                        style={{ marginRight: 5, width: '100%', marginBottom: 0 }}
                        validationState={error ? 'error' : null}>
 
-              <p><strong>Specify the time frame for the search in natural language.</strong></p>
+              <p><strong>使用自然语言（需英语）指定搜索时间范围.</strong></p>
               <KeywordInput type="text"
                             className="input-sm mousetrap"
                             name={name}
@@ -151,17 +151,17 @@ const TabKeywordTimeRange = ({ defaultValue, disabled, setValidatingKeyword }: P
       <Col sm={7}>
         <Panel>
           <Panel.Body>
-            <p><code>last month</code> searches between one month ago and now</p>
+            <p><code>last month</code> 搜索1个月内</p>
 
-            <p><code>4 hours ago</code> searches between four hours ago and now</p>
+            <p><code>4 hours ago</code> 搜索4个小时之内</p>
 
-            <p><code>1st of april to 2 days ago</code> searches between 1st of April and 2 days ago</p>
+            <p><code>1st of april to 2 days ago</code> 搜索4月1日至2天前</p>
 
-            <p><code>yesterday midnight +0200 to today midnight +0200</code> searches between yesterday midnight and today midnight in timezone +0200 - will be 22:00 in UTC</p>
+            <p><code>yesterday midnight +0200 to today midnight +0200</code> 搜索时区为+0200，昨天午夜之今天午夜之间 -（22:00 UTC）</p>
 
-            <p>Please consult the <DocumentationLink page={DocsHelper.PAGES.TIME_FRAME_SELECTOR}
-                                                     title="Keyword Time Range Documentation"
-                                                     text="documentation" /> for more details.
+            <p>详细信息,请参阅 <DocumentationLink page={DocsHelper.PAGES.TIME_FRAME_SELECTOR}
+                                                     title="时间范围关键字文档"
+                                                     text="相关文档" /> .
             </p>
           </Panel.Body>
         </Panel>
