@@ -148,11 +148,11 @@ const ExportModal = ({ closeModal, view, directExportWidgetId, executionState }:
               </Modal.Body>
               <Modal.Footer>
                 {allowWidgetSelection && <Button bsStyle="link" onClick={resetSelectedWidget} className="pull-left">Select different message table</Button>}
-                <Button type="button" onClick={closeModal}>Close</Button>
+                <Button type="button" onClick={closeModal}>关闭</Button>
                 <Button type="submit" onClick={submitForm} disabled={!enableDownload} bsStyle="primary" data-testid="download-button">
                   {loading
-                    ? <Spinner text="Downloading..." delay={0} />
-                    : <><Icon name="cloud-download-alt" />&nbsp;Start Download</>}
+                    ? <Spinner text="下载中..." delay={0} />
+                    : <><Icon name="cloud-download-alt" />&nbsp;开始下载</>}
                 </Button>
               </Modal.Footer>
             </BootstrapModalWrapper>

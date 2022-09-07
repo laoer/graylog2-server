@@ -43,25 +43,25 @@ const WidgetSelection = ({ selectWidget, widgets, view }: Props) => {
     <>
       <Row>
         <IfSearch>
-          The export will contain all messages for your current search.<br />
-          Please select a message table to adopt its fields. You can adjust all settings in the next step.
+          导出当前搜索的所有消息.<br />
+          请选择一个消息表以采用其字段，您可以在下一步中调整所有设置。
         </IfSearch>
         <IfDashboard>
-          Please select the message table you want to export the search results for. You can adjust its fields in the next step.<br />
-          Selecting a message table equals using the option &quot;Export to CSV&quot; in a message table action menu.
+          请选择要导出搜索结果的消息表，您可以在下一步中调整其字段。<br />
+          选择消息表等于消息表操作菜单中的&quot;导出为 CSV&quot;选项。
         </IfDashboard>
       </Row>
       {widgets.size !== 0 ? (
         <Row>
-          <label htmlFor="widget-selection">Select message table</label>
-          <Select placeholder="Select message table"
+          <label htmlFor="widget-selection">选择消息表</label>
+          <Select placeholder="选择消息表"
                   onChange={selectWidget}
                   options={widgetOptions}
                   inputId="widget-selection" />
         </Row>
       ) : (
         <Row>
-          <Alert bsStyle="warning">You need to create a message table widget to export its result.</Alert>
+          <Alert bsStyle="warning">您需要创建一个消息表小部件来导出其结果。</Alert>
         </Row>
       )}
     </>

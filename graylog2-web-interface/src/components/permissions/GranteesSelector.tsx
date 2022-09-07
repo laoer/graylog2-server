@@ -136,7 +136,7 @@ const GranteesSelector = ({ availableGrantees, availableCapabilities, className,
                                     onChange={(granteeId) => onChange({ target: { value: granteeId, name } })}
                                     optionRenderer={_renderGranteesSelectOption}
                                     options={granteesOptions}
-                                    placeholder="Search for users and teams"
+                                    placeholder="搜索用户和团队"
                                     value={value} />
                   )}
                 </Field>
@@ -144,9 +144,9 @@ const GranteesSelector = ({ availableGrantees, availableCapabilities, className,
               </StyledSelectGroup>
               <SubmitButton bsStyle="success"
                             disabled={isSubmitting || !isValid}
-                            title="Add Collaborator"
+                            title="添加协作者"
                             type="submit">
-                Add Collaborator
+                添加协作者
               </SubmitButton>
             </FormElements>
             {errors && (

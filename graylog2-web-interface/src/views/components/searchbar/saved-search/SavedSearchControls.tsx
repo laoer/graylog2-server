@@ -222,9 +222,9 @@ class SavedSearchControls extends React.Component<Props, State> {
     let title: string;
 
     if (dirty) {
-      title = 'Unsaved changes';
+      title = '未保存的更改';
     } else {
-      title = loaded ? 'Saved search' : 'Save search';
+      title = loaded ? '已保存的查询' : '保存查询';
     }
 
     return (
@@ -237,7 +237,7 @@ class SavedSearchControls extends React.Component<Props, State> {
               {(loadNewView) => (
                 <ButtonGroup aria-label="Search Meta Buttons">
                   <Button title={title} ref={this.formTarget} onClick={this.toggleFormModal}>
-                    <Icon style={{ color: savedSearchColor }} name="star" type={loaded ? 'solid' : 'regular'} /> Save
+                    <Icon style={{ color: savedSearchColor }} name="star" type={loaded ? 'solid' : 'regular'} /> 保存
                   </Button>
                   {showForm && (
                     <SavedSearchForm onChangeTitle={this.onChangeTitle}
@@ -249,9 +249,9 @@ class SavedSearchControls extends React.Component<Props, State> {
                                      toggleModal={this.toggleFormModal}
                                      value={newTitle} />
                   )}
-                  <Button title="Load a previously saved search"
+                  <Button title="载入一个之前保存过的查询条件"
                           onClick={this.toggleListModal}>
-                    <Icon name="folder" type="regular" /> Load
+                    <Icon name="folder" type="regular" /> 载入
                   </Button>
                   {showList && (
                     <SavedSearchList deleteSavedSearch={this.deleteSavedSearch}
@@ -262,17 +262,17 @@ class SavedSearchControls extends React.Component<Props, State> {
                                entityId={view.id}
                                onClick={this.toggleShareSearch}
                                bsStyle="default"
-                               disabledInfo={!view.id && 'Only saved searches can be shared.'} />
+                               disabledInfo={!view.id && '只有保存的搜索条件才能被分享.'} />
                   <DropdownButton title={<Icon name="ellipsis-h" />} aria-label="Open search actions dropdown" id="search-actions-dropdown" pullRight noCaret>
                     <MenuItem onSelect={this.toggleMetadataEdit} disabled={!isAllowedToEdit}>
-                      <Icon name="edit" /> Edit metadata
+                      <Icon name="edit" /> 编辑
                     </MenuItem>
                     <IfPermitted permissions="dashboards:create">
-                      <MenuItem onSelect={this._loadAsDashboard}><Icon name="tachometer-alt" /> Export to dashboard</MenuItem>
+                      <MenuItem onSelect={this._loadAsDashboard}><Icon name="tachometer-alt" /> 导出到看板</MenuItem>
                     </IfPermitted>
-                    <MenuItem onSelect={this.toggleExport}><Icon name="cloud-download-alt" /> Export</MenuItem>
+                    <MenuItem onSelect={this.toggleExport}><Icon name="cloud-download-alt" /> 导出</MenuItem>
                     <MenuItem disabled={disableReset} onSelect={() => loadNewView()}>
-                      <Icon name="eraser" /> Reset search
+                      <Icon name="eraser" /> 重置
                     </MenuItem>
                     <MenuItem divider />
                   </DropdownButton>
@@ -282,7 +282,7 @@ class SavedSearchControls extends React.Component<Props, State> {
                   {showMetadataEdit && (
                     <ViewPropertiesModal show
                                          view={view}
-                                         title="Editing saved search"
+                                         title="编辑已保存的搜索条件"
                                          onClose={this.toggleMetadataEdit}
                                          onSave={onSaveView} />
                   )}
@@ -290,7 +290,7 @@ class SavedSearchControls extends React.Component<Props, State> {
                     <EntityShareModal entityId={view.id}
                                       entityType="search"
                                       entityTitle={view.title}
-                                      description={`Search for a User or Team to add as collaborator on this ${viewTypeLabel}.`}
+                                      description={`在此 ${viewTypeLabel} 上搜索要添加为协作者的用户或团队.`}
                                       onClose={this.toggleShareSearch} />
                   )}
                 </ButtonGroup>

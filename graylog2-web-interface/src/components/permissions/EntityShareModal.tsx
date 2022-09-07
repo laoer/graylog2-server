@@ -77,12 +77,12 @@ const EntityShareModal = ({ description, entityId, entityType, entityTitle, enti
 
   return (
     <BootstrapModalConfirm confirmButtonDisabled={disableSubmit}
-                           confirmButtonText="Save"
-                           cancelButtonText="Discard changes"
+                           confirmButtonText="保存"
+                           cancelButtonText="放弃更改"
                            onConfirm={_handleSave}
                            onModalClose={onClose}
                            showModal
-                           title={<>Sharing {entityTypeTitle ?? entityType}: <i>{entityTitle}</i></>}>
+                           title={<>分享 {entityTypeTitle ?? entityType}: <i>{entityTitle}</i></>}>
       <>
         {(entityShareState && entityShareState.entity === entityGRN) ? (
           <EntityShareSettings description={description}

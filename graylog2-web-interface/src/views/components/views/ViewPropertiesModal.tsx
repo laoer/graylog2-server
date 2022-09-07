@@ -100,12 +100,12 @@ export default class ViewPropertiesModal extends React.Component<Props, State> {
                           title={modalTitle}
                           onCancel={onClose}
                           onSubmitForm={this._onSave}
-                          submitButtonText="Save"
+                          submitButtonText="保存"
                           bsSize="large">
         <Input id="title"
                type="text"
                name="title"
-               label="Title"
+               label="标题"
                help={`The title of the ${viewType}.`}
                required
                onChange={this._onChange}
@@ -113,15 +113,15 @@ export default class ViewPropertiesModal extends React.Component<Props, State> {
         <Input id="summary"
                type="text"
                name="summary"
-               label="Summary"
-               help={`A helpful summary of the ${viewType}.`}
+               label="摘要"
+               help={`对 ${viewType} 的摘要.`}
                onChange={this._onChange}
                value={summary} />
         <Input id="description"
                type="textarea"
                name="description"
-               label="Description"
-               help={`A longer, helpful description of the ${viewType} and its functionality.`}
+               label="说明"
+               help={`对 ${viewType} 及其功能的详细说明.`}
                onChange={this._onChange}
                value={description} />
       </BootstrapModalForm>

@@ -88,7 +88,7 @@ const onDelete = (e, savedSearches, deleteSavedSearch, selectedSavedSearchId) =>
 
   if (savedSearches) {
     // eslint-disable-next-line no-alert
-    if (window.confirm(`You are about to delete saved search: "${selectedSavedSearch.title}". Are you sure?`)) {
+    if (window.confirm(`要删除已保存的搜索条件: "${selectedSavedSearch.title}". 确定吗?`)) {
       deleteSavedSearch(selectedSavedSearch);
     }
   }
@@ -137,7 +137,7 @@ const SavedSearchList = ({ toggleModal, deleteSavedSearch, activeSavedSearchId }
           <ListContainer>
             {!loading && total === 0 && (
               <NoSavedSearches>
-                No saved searches found.
+                还没有已保存的搜索条件.
               </NoSavedSearches>
             )}
             {savedSearches?.length > 0 && (
@@ -151,7 +151,7 @@ const SavedSearchList = ({ toggleModal, deleteSavedSearch, activeSavedSearchId }
                         {savedSearch.summary}
                         <DeleteButton onClick={(e) => onDelete(e, savedSearches, deleteSavedSearch, savedSearch.id)}
                                       role="button"
-                                      title={`Delete search ${savedSearch.title}`}
+                                      title={`删除搜索条件 ${savedSearch.title}`}
                                       tabIndex={0}>
                           <Icon name="trash-alt" />
                         </DeleteButton>
@@ -165,7 +165,7 @@ const SavedSearchList = ({ toggleModal, deleteSavedSearch, activeSavedSearchId }
         </PaginatedList>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={toggleModal}>Cancel</Button>
+        <Button onClick={toggleModal}>取消</Button>
       </Modal.Footer>
     </Modal>
   );
