@@ -28,7 +28,7 @@ class InputStaticFields extends React.Component {
 
   _deleteStaticField = (fieldName) => {
     return () => {
-      if (window.confirm(`Are you sure you want to remove static field '${fieldName}' from '${this.props.input.title}'?`)) {
+      if (window.confirm(`确定要从 '${this.props.input.title}' 删除静态字段 '${fieldName}' 吗？`)) {
         InputStaticFieldsStore.destroy(this.props.input, fieldName);
       }
     };

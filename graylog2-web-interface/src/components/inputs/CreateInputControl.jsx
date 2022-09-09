@@ -106,7 +106,7 @@ const CreateInputControl = createReactClass({
         <InputForm ref={(configurationForm) => { this.configurationForm = configurationForm; }}
                    key="configuration-form-input"
                    configFields={selectedInputDefinition.requested_configuration}
-                   title={<span>Launch new <em>{inputTypeName}</em> input</span>}
+                   title={<span>运行新的 <em>{inputTypeName}</em> 输入</span>}
                    helpBlock="Select a name of your new input that describes it."
                    typeName={selectedInput}
                    submitAction={this._createInput} />
@@ -118,18 +118,18 @@ const CreateInputControl = createReactClass({
         <Col md={12}>
           <form className="form-inline" onSubmit={this._openModal}>
             <div className="form-group" style={{ width: 300 }}>
-              <Select placeholder="Select input"
+              <Select placeholder="选择输入类型"
                       options={this._formatSelectOptions()}
                       matchProp="label"
                       onChange={this._onInputSelect}
                       value={selectedInput} />
             </div>
             &nbsp;
-            <Button bsStyle="success" type="submit" disabled={!selectedInput}>Launch new input</Button>
+            <Button bsStyle="success" type="submit" disabled={!selectedInput}>创建新的输入</Button>
             <ExternalLinkButton href="https://marketplace.graylog.org/"
                                 bsStyle="info"
                                 style={{ marginLeft: 10 }}>
-              Find more inputs
+              查找更多输入
             </ExternalLinkButton>
           </form>
           {inputModal || customInputsComponent}

@@ -92,8 +92,8 @@ export const InputTypesStore = singletonStore(
             this.trigger(this.getInitialState());
           },
           (error) => {
-            UserNotification.error(`Fetching Input Types failed with status: ${error}`,
-              'Could not retrieve Inputs');
+            UserNotification.error(`获取输入类型失败，状态: ${error}`,
+              '无法检索输入');
           },
         );
 
@@ -105,8 +105,8 @@ export const InputTypesStore = singletonStore(
 
       promise
         .catch((error) => {
-          UserNotification.error(`Fetching input ${inputTypeId} failed with status: ${error}`,
-            'Could not retrieve input');
+          UserNotification.error(`获取输入 ${inputTypeId} 失败，状态: ${error}`,
+            '无法检索输入');
         });
 
       InputTypesActions.get.promise(promise);

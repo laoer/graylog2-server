@@ -80,9 +80,9 @@ class QueryTitleEditModal extends React.Component<Props, State> {
                           submitButtonText="Save"
                           bsSize="large">
         <Input autoFocus
-               help="Enter a helpful dashboard page title. It has a maximum length of 40 characters."
+               help="输入看板页面标题，最大长度为 40 个字符。"
                id="title"
-               label="Title"
+               label="标题"
                name="title"
                onChange={this._onDraftChange}
                maxLength={40}
