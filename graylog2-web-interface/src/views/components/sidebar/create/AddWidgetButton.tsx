@@ -151,18 +151,20 @@ class AddWidgetButton extends React.Component<Props, State> {
 
     return (
       <>
-        <SectionInfo>Use the following options to add an aggregation, log view (enterprise feature) or parameters (enterprise feature) to your search.</SectionInfo>
+        <SectionInfo>
+          使用以下选项将聚合、日志视图（企业功能）或参数（企业功能）添加到您的搜索。
+        </SectionInfo>
         <Group>
-          <SectionSubheadline>Generic</SectionSubheadline>
+          <SectionSubheadline>通用</SectionSubheadline>
           {generic}
         </Group>
         <Group>
-          <SectionSubheadline>Predefined Aggregation</SectionSubheadline>
+          <SectionSubheadline>预定义聚合</SectionSubheadline>
           {presets}
         </Group>
         {!isEmpty(components) && (
           <Group>
-            <SectionSubheadline>Other</SectionSubheadline>
+            <SectionSubheadline>其他</SectionSubheadline>
             {components}
           </Group>
         )}

@@ -56,7 +56,7 @@ const StaticColorPicker = () => (
     {({ field: { name, value, onChange }, meta }) => (
       <Input id={name}
              error={meta?.error}
-             label="Color">
+             label="颜色">
         <ColorPickerPopover id="formatting-rule-color"
                             placement="right"
                             color={value}
@@ -87,23 +87,23 @@ const validateColor = (values) => {
 
   if (values?.type === 'gradient') {
     if (trim(values?.gradient) === '') {
-      errors.gradient = 'Must be selected.';
+      errors.gradient = '请选择';
     }
 
     if (trim(values?.lower) === '') {
-      errors.lower = 'Must be present.';
+      errors.lower = '请填写';
     } else if (!numericRegex.test(values?.lower)) {
-      errors.lower = 'Must be a number.';
+      errors.lower = '请填写数字';
     }
 
     if (trim(values?.upper) === '') {
-      errors.upper = 'Must be present.';
+      errors.upper = '请填写M';
     } else if (!numericRegex.test(values?.upper)) {
-      errors.upper = 'Must be a number.';
+      errors.upper = '请填写数字';
     }
 
     if (values?.upper <= values?.lower) {
-      errors.upper = 'Must be higher than lowest value.';
+      errors.upper = '必须高于最低值';
     }
   }
 
@@ -119,7 +119,7 @@ const GradientColorPicker = () => {
             {({ field: { name, value, onChange }, meta }) => (
               <Input id={`${name}-name`}
                      error={meta?.error}
-                     label="Gradient Name">
+                     label="渐变色名称">
                 <Select options={GRADIENTS}
                         inputProps={{ 'aria-label': 'Select gradient colors' }}
                         value={value}
@@ -131,12 +131,12 @@ const GradientColorPicker = () => {
             {({ field: { name, value, onChange }, meta }) => (
               <Input id={name}
                      aria-label="Specify lowest value"
-                     label="Lowest Value"
+                     label="最低值"
                      type="number"
                      value={value}
                      error={meta?.error}
                      onChange={onChange}
-                     help="The lowest value expected in the field/series."
+                     help="字段/系列中预期的最低值。"
                      required />
             )}
           </Field>
@@ -144,12 +144,12 @@ const GradientColorPicker = () => {
             {({ field: { name, value, onChange }, meta }) => (
               <Input id={name}
                      aria-label="Specify highest value"
-                     label="Highest Value"
+                     label="最高值"
                      type="number"
                      value={value}
                      error={meta?.error}
                      onChange={onChange}
-                     help="The highest value expected in the field/series."
+                     help="字段/系列中预期的最高值"
                      required />
             )}
           </Field>
@@ -197,11 +197,11 @@ export const createNewColor = (newType: ColorType): StaticColorObject | Gradient
 
 export const validateColoringType = (value, fieldIsNumeric) => {
   if (!value || value === '') {
-    return 'Coloring is required';
+    return '颜色是必须的';
   }
 
   if (!fieldIsNumeric && value === 'gradient') {
-    return 'A gradient can only be defined for numeric fields.';
+    return '只能为数字类型字段定义渐变色。';
   }
 
   return undefined;
@@ -222,13 +222,13 @@ const HighlightingColorForm = ({ field }: Props) => {
       {({ field: { name, value }, meta }) => (
         <>
           <Input id={`${name}-coloring`}
-                 label="Coloring"
+                 label="颜色"
                  error={meta?.error}>
             <Container>
               <Input checked={value === 'static'}
                      formGroupClassName=""
                      id={name}
-                     label="Static Color"
+                     label="固定颜色"
                      onChange={onChangeType}
                      type="radio"
                      value="static" />
@@ -236,7 +236,7 @@ const HighlightingColorForm = ({ field }: Props) => {
                      formGroupClassName=""
                      id={name}
                      disabled={!isNumeric}
-                     label="Gradient"
+                     label="渐变色"
                      onChange={onChangeType}
                      type="radio"
                      value="gradient" />

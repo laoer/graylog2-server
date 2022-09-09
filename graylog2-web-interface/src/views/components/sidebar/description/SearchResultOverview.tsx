@@ -29,12 +29,12 @@ type Props = {
 
 const SearchResultOverview = ({ results: { timestamp, duration } }: Props) => {
   if (!timestamp || !duration) {
-    return <i>No query executed yet.</i>;
+    return <i>尚未执行任何查询。</i>;
   }
 
   return (
     <span>
-      Query executed in {numeral(duration).format('0,0')}ms at <Timestamp dateTime={timestamp} />.
+      在 <Timestamp dateTime={timestamp} /> 执行查询，时长 {numeral(duration).format('0,0')}ms。
     </span>
   );
 };

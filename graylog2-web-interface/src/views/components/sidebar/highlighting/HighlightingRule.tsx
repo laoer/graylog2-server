@@ -71,7 +71,7 @@ const updateColor = (rule: Rule, newColor: HighlightingColor, hidePopover: () =>
 
 const onDelete = (rule) => {
   // eslint-disable-next-line no-alert
-  if (window.confirm('Do you really want to remove this highlighting?')) {
+  if (window.confirm('确定要删除这个高亮条件吗？')) {
     HighlightingRulesActions.remove(rule);
   }
 };

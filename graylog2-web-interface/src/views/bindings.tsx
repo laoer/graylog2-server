@@ -334,17 +334,17 @@ const exports: PluginExports = {
   creators: [
     {
       type: 'preset',
-      title: 'Message Count',
+      title: '消息统计（Message Count）',
       func: AddMessageCountActionHandler,
     },
     {
       type: 'preset',
-      title: 'Message Table',
+      title: '消息表（Message Table）',
       func: AddMessageTableActionHandler,
     },
     {
       type: 'generic',
-      title: 'Aggregation',
+      title: '聚合（Aggregation）',
       func: CreateCustomAggregation,
     },
   ],

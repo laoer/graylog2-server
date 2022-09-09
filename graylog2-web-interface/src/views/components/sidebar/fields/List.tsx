@@ -58,7 +58,7 @@ const _fieldsToShow = (fields, allFields, currentGroup = 'all'): ImmutableList<F
 
 const List = ({ viewMetadata: { activeQuery }, filter, activeQueryFields, allFields, currentGroup }: Props) => {
   if (!activeQueryFields) {
-    return <span>No field information available.</span>;
+    return <span>没有可用的字段信息。</span>;
   }
 
   const fieldFilter = filter ? ((field) => field.name.toLocaleUpperCase().includes(filter.toLocaleUpperCase())) : () => true;
@@ -68,7 +68,7 @@ const List = ({ viewMetadata: { activeQuery }, filter, activeQueryFields, allFie
     .sortBy((field) => field.name.toLocaleUpperCase());
 
   if (fieldList.isEmpty()) {
-    return <i>No fields to show. Try changing your filter term or select a different field set above.</i>;
+    return <i>没有可显示的字段，请更改您的过滤条件或选择上面设置的不同字段。</i>;
   }
 
   return (
